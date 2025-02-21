@@ -1,8 +1,7 @@
-# web-dev-starter
+# Lab 5
 
-This is a starter project for web development with no frameworks and minimal
-dependencies. It is intended to be a starting point for web development projects
-that are written in plain HTML, CSS, and JavaScript.
+This project consists of a given HTML file with no styling and a given example of how the style of the given HTML should look like. The focus
+of this project is to get more practice with CSS and to create a letterheaded paper template
 
 ## Getting Started
 
@@ -11,19 +10,21 @@ To get started, clone this repository and run the following commands:
 ```bash
 npm install
 ```
+
 This will install the necessary dependencies for the project.
 
-## Development
+### Running the Site
 
-It is recommended to use the VSCode Live Server extension to run the project
-locally. This will allow you to see changes in real-time as you make them. There
-is no need to run a build process or refresh the page manually. Additionally,
-you do not need to setup a local server to run the project.
+1. Open `index.html` in Visual Studio Code.
+2. Install the Live Preview extension.
+3. Start the Live Preview server by clicking on "Live Preview: Start Server".
+4. Open the built-in debugger in VSCode.
+5. Click on the debug icon in VSCode and then click the big green arrow that says "Debug Website" to start a debugging session.
 
 ## Testing
 
-To run the tests for the project, run the following command:
+No Tests Available for this lab
 
-```bash
-npm test
-```
+## Sources Used:
+
+None used.
