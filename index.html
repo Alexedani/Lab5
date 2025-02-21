@@ -1,79 +1,73 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Fancy letterheaded paper</title>
+    <link rel="stylesheet" href="css/style.css">
+    
+  </head>
+  <body>
 
-<head>
-  <meta charset="utf-8">
-  <title>Hello World!</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="shortcut icon" href="img/favicon.ico">
-</head>
+    <article>
+      <h1 id="logoText">Awesome<br>Company</h1>
 
-<body>
-  <h1>HTML Rocks!</h1>
-  <p>
-    <button  onclick="helloWorld()">Prints Hello World to the Developer console</button>
-  </p>
-  <hr>
-  <form id="addForm">
-    <label for="num1">Number 1:</label>
-    <input type="number" id="num1" name="num1" required>
-    <br>
-    <label for="num2">Number 2:</label>
-    <input type="number" id="num2" name="num2" required>
-    <br>
-    <button type="submit">Add Numbers</button>
-  </form>
+      <address>
+        <p>The Awesome Company</p>
+        <p>102-112 Frail Bend Bridge<br>
+        The Dwindlings<br>
+        Little Hornet<br>
+        HX3 9ZQ<br>
+        UK</p>
 
-  <label id="result">Result:</label>
+        
 
-  <hr>
+      </address>
+      <br><br><br><br><br><br>
+      <br><br><br><br><br>
 
-  <button id="jokeButton">Get a Random Joke</button>
-  <p id="joke"></p>
-
-  <script type="module" script="js/main.js">
-    import {helloWorld, add, fetchRandomJoke} from './js/main.js';
-
-    // This shows how to assign a function to the window object
-    // so that it can be called from the browser console
-    window.helloWorld = helloWorld;
-
-    // This shows how to add an event listener to a button in the HTML
-    // and call a function when the button is clicked
-    const form = document.getElementById('addForm');
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const num1 = parseFloat(document.getElementById('num1').value);
-      const num2 = parseFloat(document.getElementById('num2').value);
-      try{
-        const result = add(num1, num2);
-        document.getElementById('result').textContent = `Result: ${result}`;
-      }catch(e){
-        console.error(e);
-        document.getElementById('result').textContent = `Error: ${e.message}`;
+      <nav>
+        <a href="https://example.com/">Mollis</a>
+        <a href="https://example.com/">Lorem</a>
+        <a href="https://example.com/">Ipsum</a>
+        <a href="https://example.com/">Dolor</a>
+        <a href="https://example.com/">Amet</a>
+      </nav>
+      <h2>Lorem Ipsum</h2>
+      <p style="text-align: center;">Dacă folosiţi acest site în mod regulat şi doriţi să ajutaţi să-l menţinem în Internet</p>
+      <div class="container">
+        <div class="left-column"><p class="mainText"><strong style="font-size: 20px;">Ce este Lorem Ipsum?</strong><br><br>Lorem Ipsum este pur şi simplu o machetă pentru text a industriei tipografice. Lorem Ipsum a fost macheta standard a industriei încă din secolul al XVI-lea, când un tipograf anonim a luat o planşetă de litere şi le-a amestecat pentru a crea o carte demonstrativă pentru literele respective. Nu doar că a supravieţuit timp de cinci secole, dar şi a facut saltul în tipografia electronică practic neschimbată. A fost popularizată în anii '60 odată cu ieşirea colilor Letraset care conţineau pasaje Lorem Ipsum, iar mai recent, prin programele de publicare pentru calculator, ca Aldus PageMaker care includeau versiuni de Lorem Ipsum.<br><br><strong style="font-size: 20px;">De under provine?</strong><br><br>n ciuda opiniei publice, Lorem Ipsum nu e un simplu text fără sens. El îşi are rădăcinile într-o bucată a literaturii clasice latine din anul 45 î.e.n., făcând-o să aibă mai bine de 2000 ani. Profesorul universitar de latină de la colegiul Hampden-Sydney din Virginia, Richard McClintock, a căutat în bibliografie.</p></div>
+        <div class="right-column"><p class="mainText"><strong style="font-size: 20px;">De ce îl folosim?</strong><br><br>Există o mulţime de variaţii disponibile ale pasajelor Lorem Ipsum, dar majoritatea lor au suferit alterări într-o oarecare măsură prin infiltrare de elemente de umor, sau de cuvinte luate aleator, care nu sunt câtuşi de puţin credibile. Daca vreţi să folosiţi un pasaj de Lorem Ipsum, trebuie să vă asiguraţi că nu conţine nimic stânjenitor ascuns printre randuri.</p>
+          <form action="" method="post">
+            <fieldset>
+              <legend>Select an Option:</legend>
+              <label>
+                <input type="radio" name="option" value="Paragrafe"> Paragrafe
+              </label><br>
+              <label>
+                <input type="radio" name="option" value="Cuvinte"> Cuvinte
+              </label><br>
+              <label>
+                <input type="radio" name="option" value="Odigna"> Odigna
+              </label><br>
+              <button type="submit" onclick="displayAlert()">Genereaza Lorem Ipsum</button>
+            </fieldset>
+          </form>
+        </div>
+      </div>
+    </article>
+    <script>
+      function displayAlert() {
+        const options = document.getElementsByName('option');
+        let selectedOption;
+        for (const option of options) {
+          if (option.checked) {
+            selectedOption = option.value;
+            break;
+          }
+        }
+        alert(`Selected option: ${selectedOption}`);
       }
-
-    });
-
-    // this shows how to add an event listener to a button in the HTML
-    // that calls a function that fetches a random joke from an API
-    // and displays it on the page
-    const jokebtn = document.getElementById('jokeButton');
-    const jokeresult = document.getElementById('joke');
-    jokebtn.addEventListener('click', async () => {
-      try {
-        jokeresult.textContent = 'Loading...';
-        const joke = await fetchRandomJoke();
-        document.getElementById('joke').textContent = joke;
-      } catch (e) {
-        console.error(e);
-        document.getElementById('joke').textContent = `Error: ${e.message}`;
-      }
-    });
-  </script>
-
-</body>
-
+    </script>
+  </body>
 </html>
